@@ -1,0 +1,54 @@
+<p>{{appName}}</p>
+
+<app-test *ngIf= "show else showElse"></app-test>
+
+<button (click)="show = !show">show test item</button><br><br>
+
+<ng-template #showElse>
+    <h1>hlo null</h1>
+</ng-template>
+
+
+<input type="text" appLowercaseInput><br><br>
+
+
+
+<div>
+<button (click)="toggleDiv()">Show Orders</button>
+<h1 class="items">Items</h1>
+<div class="grid-container" *ngIf="isDivVisible">
+    <div class="grid-item" *ngFor="let item of items">
+
+      <h3>{{ item.name}}</h3>
+      <p>Price: {{ item.price |  currency: 'INR' }}</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="grid-container">
+  <ng-container *appCustomGrid="items; let item; let i = index">
+    <div class="grid-item">
+      <h3>{{ item.name }}</h3>
+      <p>Price: {{ item.price | currency }}</p>
+      <p>Item Number: {{ i + 1 }}</p>
+    </div>
+  </ng-container>
+</div> -->
+
+  
